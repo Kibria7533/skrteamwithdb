@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './Footer'
 import Header from './Header'
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import {
   Link
 } from "react-router-dom";
@@ -270,8 +271,11 @@ class Home extends Component {
       </div>
     </div>
   </div>
-  {/* /.container */}
-  {/*footer starts from here*/}
+ 
+  <MessengerCustomerChat
+    pageId="112437417295403"
+    appId="2750775745168996"
+  />
  <Footer/>
 </div>
 
