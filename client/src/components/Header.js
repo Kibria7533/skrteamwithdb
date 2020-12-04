@@ -75,7 +75,7 @@ class Header extends Component {
         <img src="images/chainlogo.png" alt="logo" />
       </Link>
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="fas fa-bars" />
+        <span className="fas fa-bars" style={{color:"black"}} />
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
