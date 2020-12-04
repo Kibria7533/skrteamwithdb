@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './Footer';
 import Header from './Header'
+import Typical from 'react-typical'
 class four extends Component {
     render() {
         return (
@@ -23,11 +24,16 @@ class four extends Component {
             {/* Page Content */}
             <div className="container">
               <div className="error-contents">
-                <div className="error-img">
+              <Typical
+        steps={['Hello', 1000, 'Hello Chaincome member!', 500]}
+        loop={Infinity}
+        wrapper="p"
+      />
+                {/* <div className="error-img">
                   <img className="img-fluid" src="images/upcoming.png" alt="" />
-                </div>
-                <h3>“Business opportunities are like buses, there's always another one coming.” – Richard Branson.</h3>
-                <p>“Success is not final; failure is not fatal: it is the courage to continue that counts.” – Winston Churchill. ... <a href="/home">Homepage</a></p>
+                </div> */}
+                <h3>Current Ballence:3000 Taka.</h3>
+                <p>Do You want to withdraw?<a href="/home">Lets withdraw</a></p>
                 <a className="btn btn-primary" href="/home"> Back To Homepage </a>
               </div>
               {/* /.jumbotron */}

@@ -28,11 +28,11 @@ import Manageservices from './components/Manageservices';
 import Manageprojects from './components/Manageprojects';
 import Managecontact from './components/Managecontact';
 import Managefaq from './components/Managefaq';
-
-
-
-
-
+import Logout from './components/Logout'
+import Profile from './components/Profile'
+import Earning from './components/Earning'
+import Invite from './components/Invite'
+import Projectshow from './components/Projectshow';
 
 
 
@@ -42,18 +42,23 @@ function App() {
     <div>
   
    <Switch>
-          <Route path="/"  exact component={Home}/>
+   <Route path="/"  exact component={Home}/>
           <Route path="/home"  exact component={Home}/>
           <Route path="/about"  exact component={Aboutus}/>
           <Route path="/services"  exact component={Services}/>
           <Route path="/faq"  exact component={Faq}/>
           <Route path="/pricing"  exact component={Pricing}/>
           <Route path="/portfolio3"  exact component={Portfolioshow3}/>
-          <Route path="/portfolio4"  exact component={Projectsshow4}/>
+          <Route path="/404"  exact component={Projectshow}/>
           <Route path="/singleproject" exact component={Singleproject}/>
           <Route path="/blog"  exact component={Blog}/>
           <Route path="/blog-post"  exact component={Blogpost}/>
           <Route path="/contact"  exact component={Contact}/>
+          <Route path="/shop"  exact component={four}/>
+          <Route exact path="/logout" component={Logout} />
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/earning" component={Earning}/>
+          <Route exact path="/invite" component={Invite}/>
           <Route path="/adminregister"  exact component={Adminregister}/>
           <Route path="/admin"  exact component={Adminlogin}/>
           <Route path="/dashboard"  exact component={Dashboard}/>

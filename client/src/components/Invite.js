@@ -24,7 +24,8 @@ class four extends Component {
             <div className="container">
               <div className="error-contents">
                 <div className="error-img">
-                  <img className="img-fluid" src="images/upcoming.png" alt="" />
+                  {/* <img className="img-fluid" src="images/upcoming.png" alt="" /> */}
+                  <h2>Copy The link to share Chaincome</h2><a style={{backgroundColor:"red"}}>Click me</a>
                 </div>
                 <h3>“Business opportunities are like buses, there's always another one coming.” – Richard Branson.</h3>
                 <p>“Success is not final; failure is not fatal: it is the courage to continue that counts.” – Winston Churchill. ... <a href="/home">Homepage</a></p>

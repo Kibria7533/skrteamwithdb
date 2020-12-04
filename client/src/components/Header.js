@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
 
+import Avatar from 'react-avatar';
 import {
   Link,
   NavLink
 } from "react-router-dom";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: false,
+      auth:false,
+          username:"",
+          admin:false,
+    };
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+ 
+  
+  onSetSidebarOpen(open) {
+    this.setState({ sidebarOpen: open });
+  }
+
+  async componentDidMount(){
+    const token=localStorage.getItem('auth');
+    const username=localStorage.getItem('username');
+      const role=localStorage.getItem('userrole');
+    
+
+    if(token && role==="admin")
+    {
+        this.setState({admin:true})
+    }
+
+    if(token){
+        this.setState({auth:true,username:username})
+    }
+    else{
+        this.setState({auth:false,username:""})
+    }}
     render() {
         return (
             <div>
@@ -26,19 +60,19 @@ class Header extends Component {
         <div className="col-lg-6">
           <div className="contact-details">
             <ul>
-              <li><i className="fas fa-phone fa-rotate-90" /> +01 899 286 777</li>
-              <li><i className="fas fa-map-marker-alt" /> 8/99 , North khailkoir, NY</li>
+              <li><i className="fas fa-phone fa-rotate-90" /> +01611513467</li>
+              <li><i className="fas fa-map-marker-alt" /> 8/99 , Dhaka , Tongi</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  {/* Navigation */}
+ 
   <nav className="navbar navbar-expand-lg navbar-dark bg-light top-nav">
     <div className="container">
       <Link className="navbar-brand" to="/">
-        <img src="images/logo.png" alt="logo" />
+        <img src="images/chainlogo.png" alt="logo" />
       </Link>
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span className="fas fa-bars" />
@@ -49,22 +83,57 @@ class Header extends Component {
             <NavLink  className="nav-link" to="/home">Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/about">About</NavLink>
+            <NavLink  className="nav-link" to="/about">About Chaincome</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/services">Services</NavLink>
+            <NavLink  className="nav-link" to="/services">Down links</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/portfolio4">Projects</NavLink>
+            <NavLink  className="nav-link" to="/shop">Shop</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/faq">FAQ</NavLink>
+            <NavLink  className="nav-link" to="/faq">Notifications</NavLink>
           </li>
          
         
           <li className="nav-item">
             <NavLink className="nav-link" to="/contact">Contact</NavLink>
           </li>
+          {this.state.auth?
+                          <li className="nav-item dropdown">
+                          <a className="nav-link  dropdown-toggle" data-toggle="dropdown"><Avatar size="30" round style={{"marginTop":"2px"}}  facebook-id="invalidfacebookusername" src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3" /></a>
+                          <ul className="dropdown-menu dropdown-menu-right">
+                             
+                                <li><a className="dropdown-item" href="/profile">Myself</a></li>
+                                <li><a className="dropdown-item" href="/invite">Invite Others</a></li>
+                                <li><a className="dropdown-item" href="/earning">My Walet</a></li>
+                                <li><a className="dropdown-item" href="/logout">Logout</a></li>
+                             
+                           
+
+                          </ul>
+                      </li>: <li className="nav-item dropdown">
+                                                <a className="nav-link  dropdown-toggle" data-toggle="dropdown"><Avatar size="30" round style={{"marginTop":"2px"}}  facebook-id="invalidfacebookusername" src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3" /></a>
+                                                <ul className="dropdown-menu dropdown-menu-right">
+                                                   
+                                                      <li><a className="dropdown-item" href="/signup">Register</a></li>
+                                                      <li><a className="dropdown-item" href="/login">Login</a></li>
+                                                   
+                                                 
+
+                                                </ul>
+                                            </li>
+                          }
+                          {this.state.admin && 
+                               <li className="nav-item ">
+                               <a className="nav-link"  href="/admindashboard" ><i className="fa fa-home" style={{"fontSize":"28px","color":"blue"}}></i></a>
+                               
+                           </li>
+                              //  <a className="nav-link" href="/admindashboard" style={{ "marginTop": "-34px",
+                              //  "marginLeft": "22px"}}><i className="fa fa-home" style={{"fontSize":"28px","color":"blue"}}></i></a>
+                           
+                               }
+         
         </ul>
       </div>
     </div>
