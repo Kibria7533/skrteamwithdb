@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './Footer'
 import Header from './Header'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import {
   Link
 } from "react-router-dom";
@@ -22,22 +22,22 @@ class Home extends Component {
         {/* Slide One - Set the background image for this slide in the line below */}
         <div className="carousel-item active" style={{backgroundImage: 'url("images/slider-01.jpg")'}}>
           <div className="carousel-caption d-none d-md-block">
-            <h3>Welcome to Zonebiz</h3>
-            <p>A Great Theme For Business Consulting</p>
+            <h3>Welcome to Chaincome</h3>
+            <p>Teamwork begins by building trust</p>
           </div>
         </div>
         {/* Slide Two - Set the background image for this slide in the line below */}
         <div className="carousel-item" style={{backgroundImage: 'url("images/slider-02.jpg")'}}>
           <div className="carousel-caption d-none d-md-block">
-            <h3>Best Consulting Services.</h3>
-            <p>A Great Theme For Business Consulting</p>
+            <h3>Welcome to Chaincome</h3>
+            <p>Lets work Togather</p>
           </div>
         </div>
         {/* Slide Three - Set the background image for this slide in the line below */}
         <div className="carousel-item" style={{backgroundImage: 'url("images/slider-03.jpg")'}}>
           <div className="carousel-caption d-none d-md-block">
-            <h3>Welcome to Zonebiz</h3>
-            <p>A Great Theme For Business Consulting</p>
+            <h3>Welcome to Chaincome</h3>
+            <p>Lets do business</p>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ class Home extends Component {
     <div className="about-main">
       <div className="row">
         <div className="col-lg-6">
-          <h2>Welcome to Zonebiz</h2>
+          <h2>Welcome to Chaincome</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
           <h5>Our smart approach</h5>
