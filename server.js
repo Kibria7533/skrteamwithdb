@@ -26,17 +26,7 @@ connection.once("open", () => {
 
 app.use(require("./routes/users"));
 
-if (process.env.NODE_ENV === "production") {
-      app.use(express.static("client/build"));
-      app.get('/*', function(req, res) {   
-  res.sendFile(path.join(__dirname, 'client','public','index.html'), function(err) {
-    if (err) {
-      console.log(err);
-      res.status(500).send(err)
-    }
-  })
-})
-  }
+
 
 
   app.post('/webhook', (req, res) => {  
@@ -89,6 +79,17 @@ if (process.env.NODE_ENV === "production") {
       }
     }
   });
+  if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+    app.get('*', function(req, res) {   
+res.sendFile(path.join(__dirname, 'client','public','index.html'), function(err) {
+  if (err) {
+    console.log(err);
+    res.status(500).send(err)
+  }
+})
+})
+}
 app.listen(process.env.PORT||8000,()=>{
     console.log('server started');
 })
